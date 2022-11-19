@@ -74,8 +74,9 @@ export default {
             // 当页面的路由跳转不一致才允许跳转
             if(this.$route.path !== item.path && !(this.$route.path === '/home' && (item.path === '/'))){
                 this.$router.push(item.path)    
-        
+                
             }
+            this.$store.commit('selectMenu',item)
         }
     },
     computed: {
